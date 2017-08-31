@@ -37,19 +37,19 @@
 //    [self.view addSubview:imageView];
     
     
-//    UIButton *button = [HQUIKit hq_buttonLinedWithImageNamed:@"header" titleText:@"哈哈哈"
-//                                                   textColor:[UIColor hq_randomColor] fontSize:20 space:10];
-//    button.frame = CGRectMake(0, 0, 200, 200);
+    UIButton *button = [HQUIKit hq_buttonLinedWithImageNamed:@"header" titleText:@"哈哈哈"
+                                                   textColor:[UIColor hq_randomColor] fontSize:20 space:10];
+    button.frame = CGRectMake(0, 0, 200, 200);
+    
+    [self.view addSubview:button];
+    
+//    _tableView = [HQUIKit hq_tableViewWithGrouped];
+//    _tableView.delegate = self;
+//    _tableView.dataSource = self;
 //    
-//    [self.view addSubview:button];
-    
-    _tableView = [HQUIKit hq_tableViewWithGrouped];
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    
-    _tableView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
-    
-    [self.view addSubview:_tableView];
+//    _tableView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+//    
+//    [self.view addSubview:_tableView];
 
     
 }

@@ -168,7 +168,7 @@
  */
 + (UIButton *)hq_buttonWithBackgroundColor:(UIColor *)backgroundColor {
 
-    UIButton *button = [[UIButton alloc] init];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     button.backgroundColor = backgroundColor;
     return button;
     
@@ -202,7 +202,7 @@
  */
 + (UIButton *)hq_buttonWithBackgroundColor:(UIColor *)backgroundColor titleText:(NSString *)text textColor:(UIColor *)textColor font:(UIFont *)font {
 
-    UIButton *button = [[UIButton alloc] init];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     button.backgroundColor = backgroundColor;
     [button setTitle:text forState:UIControlStateNormal];
     [button setTitleColor:textColor forState:UIControlStateNormal];
@@ -220,7 +220,7 @@
  */
 + (UIButton *)hq_buttonWithImageNamed:(NSString *)named {
 
-    UIButton *button = [[UIButton alloc] init];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     [button setImage:[UIImage imageNamed:named] forState:UIControlStateNormal];
     
     return button;
@@ -237,7 +237,7 @@
  */
 + (UIButton *)hq_buttonWithImageNamed:(NSString *)named selectedImageNamed:(NSString *)selectedNamed {
 
-    UIButton *button = [[UIButton alloc] init];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     [button setImage:[UIImage imageNamed:named] forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:selectedNamed] forState:UIControlStateSelected];
     
@@ -272,7 +272,7 @@
  */
 + (UIButton *)hq_buttonWithImageNamed:(NSString *)named titleText:(NSString *)text textColor:(UIColor *)textColor font:(UIFont *)font {
     
-    UIButton *button = [[UIButton alloc] init];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     [button setImage:[UIImage imageNamed:named] forState:UIControlStateNormal];
     [button setTitle:text forState:UIControlStateNormal];
     [button setTitleColor:textColor forState:UIControlStateNormal];
@@ -312,7 +312,7 @@
  */
 + (UIButton *)hq_buttonWithImageNamed:(NSString *)named titleText:(NSString *)text textColor:(UIColor *)textColor font:(UIFont *)font space:(CGFloat)space {
 
-    UIButton *button = [[UIButton alloc] init];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     [button setImage:[UIImage imageNamed:named] forState:UIControlStateNormal];
     [button setTitle:text forState:UIControlStateNormal];
     [button setTitleColor:textColor forState:UIControlStateNormal];
@@ -353,7 +353,7 @@
  */
 + (UIButton *)hq_buttonWithImageNamed:(NSString *)named selectedImageNamed:(NSString *)selectedNamed titleText:(NSString *)text textColor:(UIColor *)textColor font:(UIFont *)font {
 
-    UIButton *button = [[UIButton alloc] init];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     
     [button setImage:[UIImage imageNamed:named] forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:selectedNamed] forState:UIControlStateSelected];
@@ -395,7 +395,7 @@
  */
 + (UIButton *)hq_buttonLinedWithImageNamed:(NSString *)named titleText:(NSString *)text textColor:(UIColor *)textColor font:(UIFont *)font space:(CGFloat)space {
 
-    UIButton *button = [[UIButton alloc] init];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     [button setImage:[UIImage imageNamed:named] forState:UIControlStateNormal];
     [button setTitle:text forState:UIControlStateNormal];
     [button setTitleColor:textColor forState:UIControlStateNormal];
