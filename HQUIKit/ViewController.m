@@ -31,17 +31,20 @@
 //    label.text = @"13512";
 //    [self.view addSubview:label];
 
+    self.view.backgroundColor = [UIColor whiteColor];
     
 //    UIImageView *imageView = [HQUIKit hq_imageViewWithImageUrlString:@"http://upload-images.jianshu.io/upload_images/2162015-4724f8b0b1058e9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/12" placeholderImageNamed:@"header"];
 //    imageView.frame = CGRectMake(0, 0, 100, 100);
 //    [self.view addSubview:imageView];
     
     
-    UIButton *button = [HQUIKit hq_buttonLinedWithImageNamed:@"header" titleText:@"哈哈哈"
-                                                   textColor:[UIColor hq_randomColor] fontSize:20 space:10];
-    button.frame = CGRectMake(0, 0, 200, 200);
+    UIButton *button = [HQUIKit hq_navigationButtonWithImageNamed:@"icon_return"];
     
-    [self.view addSubview:button];
+    UIButton *button2 = [HQUIKit hq_navigationButtonWithImageNamed:@"header"];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button2];
+
     
 //    _tableView = [HQUIKit hq_tableViewWithGrouped];
 //    _tableView.delegate = self;
@@ -53,6 +56,7 @@
 
     
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 

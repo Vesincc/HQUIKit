@@ -131,6 +131,25 @@
  */
 + (UIButton *)hq_buttonWithBackgroundColor:(UIColor *)backgroundColor titleText:(NSString *)text textColor:(UIColor *)textColor fontSize:(CGFloat)size;
 
+/**
+ UIButton 内容 字色 字号
+ 
+ @param text 内容
+ @param textColor 字色
+ @param size 字号
+ @return UIButton
+ */
++ (UIButton *)hq_buttonWithText:(NSString *)text textColor:(UIColor *)textColor fontSize:(CGFloat)size;
+
+/**
+ UIButton 内容 字色 字体
+ 
+ @param text 内容
+ @param textColor 字色
+ @param font 字体
+ @return UIButton
+ */
++ (UIButton *)hq_buttonWithText:(NSString *)text textColor:(UIColor *)textColor font:(UIFont *)font;
 
 /**
  UIButton 背景色 内容 字色 字体
@@ -344,5 +363,74 @@
  @return UITableView
  */
 + (UITableView *)hq_tableViewWithPlainSeparatorSpace:(CGFloat)separatorSpace;
+
+#pragma mark - NavigationButton
+
+
+/**
+ NavigationButton 图片
+
+ @param named 图片
+ @return UIButton
+ */
++ (UIButton *)hq_navigationButtonWithImageNamed:(NSString *)named;
+
+
+/**
+ NavigationButton 文字 字色
+
+ @param text 文字
+ @param color 字色
+ @return UIButton
+ */
++ (UIButton *)hq_navigationButtonWithText:(NSString *)text textColor:(UIColor *)color;
+
+
+/**
+ NavigationButton 文字 字色 字体
+
+ @param text 文字
+ @param color 字色
+ @param font 字体
+ @return UIButton
+ */
++ (UIButton *)hq_navigationButtonWithText:(NSString *)text textColor:(UIColor *)color font:(UIFont *)font;
+
+
+/**
+ NavigationButton 图片 文字 字色
+
+ @param named 图片
+ @param text 文字
+ @param textColor 字色
+ @return UIButton
+ */
++ (UIButton *)hq_navigationButtonWithImageNamed:(NSString *)named andText:(NSString *)text textColor:(UIColor *)textColor;
+
+
+/**
+ NavigationButton 图片 文字 字色 字体
+
+ @param named 图片
+ @param text 文字
+ @param textColor 字色
+ @param font 字体
+ @return UIButton
+ */
++ (UIButton *)hq_navigationButtonWithImageNamed:(NSString *)named andText:(NSString *)text textColor:(UIColor *)textColor font:(UIFont *)font;
+
+
+/**
+ NavigationButton 图片 文字 字色 字体 图片位置 间距
+
+ @param named 图片
+ @param text 文字
+ @param textColor 字色
+ @param font 字体
+ @param isLeft 图片位置
+ @param space 间距
+ @return UIButton
+ */
++ (UIButton *)hq_navigationButtonWithImageNamed:(NSString *)named andText:(NSString *)text textColor:(UIColor *)textColor font:(UIFont *)font imageLeft:(BOOL)isLeft space:(CGFloat)space;
 
 @end

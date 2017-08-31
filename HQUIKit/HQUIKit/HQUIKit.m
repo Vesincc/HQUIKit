@@ -8,8 +8,11 @@
 
 #import "HQUIKit.h"
 #import "UIImageView+WebCache.h"
+#import "HQCategory.h"
 
 @implementation HQUIKit
+
+#pragma mark - UILabel
 
 /**
  UILabel 字色 字号
@@ -168,7 +171,7 @@
  */
 + (UIButton *)hq_buttonWithBackgroundColor:(UIColor *)backgroundColor {
 
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    UIButton *button = [[UIButton alloc] init];
     button.backgroundColor = backgroundColor;
     return button;
     
@@ -190,6 +193,34 @@
     
 }
 
+/**
+ UIButton 内容 字色 字号
+ 
+ @param text 内容
+ @param textColor 字色
+ @param size 字号
+ @return UIButton
+ */
++ (UIButton *)hq_buttonWithText:(NSString *)text textColor:(UIColor *)textColor fontSize:(CGFloat)size {
+
+    return [HQUIKit hq_buttonWithText:text textColor:textColor font:[UIFont systemFontOfSize:size weight:UIFontWeightThin]];
+    
+}
+
+/**
+ UIButton 内容 字色 字体
+ 
+ @param text 内容
+ @param textColor 字色
+ @param font 字体
+ @return UIButton
+ */
++ (UIButton *)hq_buttonWithText:(NSString *)text textColor:(UIColor *)textColor font:(UIFont *)font {
+
+    return [HQUIKit hq_buttonWithBackgroundColor:[UIColor clearColor] titleText:text textColor:textColor font:font];
+    
+}
+
 
 /**
  UIButton 背景色 内容 字色 字体
@@ -202,7 +233,7 @@
  */
 + (UIButton *)hq_buttonWithBackgroundColor:(UIColor *)backgroundColor titleText:(NSString *)text textColor:(UIColor *)textColor font:(UIFont *)font {
 
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    UIButton *button = [[UIButton alloc] init];
     button.backgroundColor = backgroundColor;
     [button setTitle:text forState:UIControlStateNormal];
     [button setTitleColor:textColor forState:UIControlStateNormal];
@@ -220,7 +251,7 @@
  */
 + (UIButton *)hq_buttonWithImageNamed:(NSString *)named {
 
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    UIButton *button = [[UIButton alloc] init];
     [button setImage:[UIImage imageNamed:named] forState:UIControlStateNormal];
     
     return button;
@@ -237,7 +268,7 @@
  */
 + (UIButton *)hq_buttonWithImageNamed:(NSString *)named selectedImageNamed:(NSString *)selectedNamed {
 
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    UIButton *button = [[UIButton alloc] init];
     [button setImage:[UIImage imageNamed:named] forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:selectedNamed] forState:UIControlStateSelected];
     
@@ -272,7 +303,7 @@
  */
 + (UIButton *)hq_buttonWithImageNamed:(NSString *)named titleText:(NSString *)text textColor:(UIColor *)textColor font:(UIFont *)font {
     
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    UIButton *button = [[UIButton alloc] init];
     [button setImage:[UIImage imageNamed:named] forState:UIControlStateNormal];
     [button setTitle:text forState:UIControlStateNormal];
     [button setTitleColor:textColor forState:UIControlStateNormal];
@@ -312,7 +343,7 @@
  */
 + (UIButton *)hq_buttonWithImageNamed:(NSString *)named titleText:(NSString *)text textColor:(UIColor *)textColor font:(UIFont *)font space:(CGFloat)space {
 
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    UIButton *button = [[UIButton alloc] init];
     [button setImage:[UIImage imageNamed:named] forState:UIControlStateNormal];
     [button setTitle:text forState:UIControlStateNormal];
     [button setTitleColor:textColor forState:UIControlStateNormal];
@@ -353,7 +384,7 @@
  */
 + (UIButton *)hq_buttonWithImageNamed:(NSString *)named selectedImageNamed:(NSString *)selectedNamed titleText:(NSString *)text textColor:(UIColor *)textColor font:(UIFont *)font {
 
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    UIButton *button = [[UIButton alloc] init];
     
     [button setImage:[UIImage imageNamed:named] forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:selectedNamed] forState:UIControlStateSelected];
@@ -395,7 +426,7 @@
  */
 + (UIButton *)hq_buttonLinedWithImageNamed:(NSString *)named titleText:(NSString *)text textColor:(UIColor *)textColor font:(UIFont *)font space:(CGFloat)space {
 
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    UIButton *button = [[UIButton alloc] init];
     [button setImage:[UIImage imageNamed:named] forState:UIControlStateNormal];
     [button setTitle:text forState:UIControlStateNormal];
     [button setTitleColor:textColor forState:UIControlStateNormal];
@@ -593,5 +624,134 @@
     return tableView;
     
 }
+
+#pragma mark - NavigationButton
+
+
+/**
+ NavigationButton 图片
+ 
+ @param named 图片
+ @return UIButton
+ */
++ (UIButton *)hq_navigationButtonWithImageNamed:(NSString *)named {
+
+    UIButton *button = [HQUIKit hq_buttonWithImageNamed:named];
+    button.frame = CGRectMake(0, 0, button.imageView.image.size.width, button.imageView.image.size.height > 40 ? button.imageView.image.size.height : 40);
+    
+    return button;
+}
+
+
+/**
+ NavigationButton 文字 字色
+ 
+ @param text 文字
+ @param color 字色
+ @return UIButton
+ */
++ (UIButton *)hq_navigationButtonWithText:(NSString *)text textColor:(UIColor *)color {
+
+    return [HQUIKit hq_navigationButtonWithText:text textColor:color font:[UIFont systemFontOfSize:14 weight:UIFontWeightThin]];
+    
+}
+
+
+/**
+ NavigationButton 文字 字色 字体
+ 
+ @param text 文字
+ @param color 字色
+ @param font 字体
+ @return UIButton
+ */
++ (UIButton *)hq_navigationButtonWithText:(NSString *)text textColor:(UIColor *)color font:(UIFont *)font {
+
+    NSDictionary *dic = @{NSFontAttributeName : font};
+    
+    CGSize textSize = [text boundingRectWithSize:[[UIScreen mainScreen] bounds].size
+                                         options:(NSStringDrawingUsesLineFragmentOrigin |
+                                                  NSStringDrawingTruncatesLastVisibleLine)
+                                      attributes:dic context:nil].size;
+    
+    UIButton *button = [HQUIKit hq_buttonWithBackgroundColor:[UIColor clearColor] titleText:text textColor:color font:font];
+    button.frame = CGRectMake(0, 0, textSize.width < 20 ? 20 : textSize.width, 40);
+    
+    return button;
+    
+}
+
+
+/**
+ NavigationButton 图片 文字 字色
+ 
+ @param named 图片
+ @param text 文字
+ @param textColor 字色
+ @return UIButton
+ */
++ (UIButton *)hq_navigationButtonWithImageNamed:(NSString *)named andText:(NSString *)text textColor:(UIColor *)textColor {
+
+    return [HQUIKit hq_navigationButtonWithImageNamed:named andText:text textColor:textColor font:[UIFont systemFontOfSize:14 weight:UIFontWeightThin]];
+    
+}
+
+
+/**
+ NavigationButton 图片 文字 字色 字体
+ 
+ @param named 图片
+ @param text 文字
+ @param textColor 字色
+ @param font 字体
+ @return UIButton
+ */
++ (UIButton *)hq_navigationButtonWithImageNamed:(NSString *)named andText:(NSString *)text textColor:(UIColor *)textColor font:(UIFont *)font {
+
+    return [HQUIKit hq_navigationButtonWithImageNamed:named andText:text textColor:textColor font:font imageLeft:YES space:5];
+    
+}
+
+
+/**
+ NavigationButton 图片 文字 字色 字体 图片位置 间距
+ 
+ @param named 图片
+ @param text 文字
+ @param textColor 字色
+ @param font 字体
+ @param isLeft 图片位置
+ @param space 间距
+ @return UIButton
+ */
++ (UIButton *)hq_navigationButtonWithImageNamed:(NSString *)named andText:(NSString *)text textColor:(UIColor *)textColor font:(UIFont *)font imageLeft:(BOOL)isLeft space:(CGFloat)space {
+
+    NSDictionary *dic = @{NSFontAttributeName : font};
+    
+    CGSize textSize = [text boundingRectWithSize:[[UIScreen mainScreen] bounds].size
+                                         options:(NSStringDrawingUsesLineFragmentOrigin |
+                                                  NSStringDrawingTruncatesLastVisibleLine)
+                                      attributes:dic context:nil].size;
+    
+    UIButton *button = [HQUIKit hq_buttonWithImageNamed:named titleText:text textColor:textColor font:font];
+    button.frame = CGRectMake(0, 0, textSize.width + space + button.imageView.image.size.width < 20 ? 20 : textSize.width + space + button.imageView.image.size.width, 40);
+    
+    if (isLeft) {
+    
+        [button setImageEdgeInsets:UIEdgeInsetsMake(0, -space/2.0f, 0, space/2.0f)];
+        [button setTitleEdgeInsets:UIEdgeInsetsMake(0, space/2.0f, 0, -space/2.0f)];
+        
+    } else {
+    
+        [button setImageEdgeInsets:UIEdgeInsetsMake(0, space/2.0f + textSize.width, 0, -space/2.0f - textSize.width)];
+        [button setTitleEdgeInsets:UIEdgeInsetsMake(0, -space/2.0f - button.imageView.image.size.width, 0, space/2.0f + button.imageView.image.size.width)];
+        
+    }
+    
+    return button;
+    
+    
+}
+
 
 @end
