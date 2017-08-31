@@ -1,0 +1,20 @@
+PODS:
+  - HQCategory (0.0.7)
+  - Masonry (1.0.2)
+  - SDWebImage (4.1.0):
+    - SDWebImage/Core (= 4.1.0)
+  - SDWebImage/Core (4.1.0)
+
+DEPENDENCIES:
+  - HQCategory
+  - Masonry
+  - SDWebImage
+
+SPEC CHECKSUMS:
+  HQCategory: 61ef065a53c59e51e454ba89fbaaaac0aaafc5c1
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
+
+PODFILE CHECKSUM: f02e742124c5966a9b6dc053dd4e9a1e246436df
+
+COCOAPODS: 1.1.1
