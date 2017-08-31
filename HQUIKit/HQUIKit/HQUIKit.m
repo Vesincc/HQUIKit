@@ -8,7 +8,6 @@
 
 #import "HQUIKit.h"
 #import "UIImageView+WebCache.h"
-#import "HQCategory.h"
 
 @implementation HQUIKit
 
